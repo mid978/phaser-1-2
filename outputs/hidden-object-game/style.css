@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
+
+:root { color-scheme: dark; font-family: "Zen Maru Gothic", sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: #21170f; color: #fff7e9; }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .38; background: radial-gradient(circle at 70% 20%, #85552f 0, transparent 34%), radial-gradient(circle at 18% 85%, #5b341c 0, transparent 38%); }
+.game-shell { position: relative; z-index: 1; min-height: 100vh; max-width: 1480px; margin: auto; padding: clamp(24px, 5vw, 72px); display: grid; grid-template-columns: minmax(250px, 340px) minmax(0, 1fr); align-items: center; gap: clamp(28px, 5vw, 84px); }
+.game-copy { filter: drop-shadow(0 8px 20px #0008); }
+.eyebrow { color: #e1ac61; font-size: 11px; letter-spacing: .2em; font-weight: 700; margin: 0 0 10px; }
+h1 { font-family: "Kaisei Decol", serif; font-size: clamp(34px, 4.3vw, 56px); line-height: 1.25; margin: 0; letter-spacing: .02em; }
+h1 span { color: #efbd73; }
+.lead { color: #e9d7be; line-height: 1.8; font-size: 14px; margin: 20px 0 25px; }
+.status-card, .target-card { border: 1px solid #c99a5a88; border-radius: 12px; padding: 14px 16px; background: #100b08a8; margin-top: 10px; }
+.status-card span, .target-card span { display: block; color: #d1ae7c; font-size: 11px; letter-spacing: .08em; }
+.status-card strong { display: block; font: 700 34px/1.2 ui-monospace, monospace; color: #fff0c5; }
+.target-card strong { display: block; font-size: 20px; margin-top: 4px; color: #fff6df; }
+.target-card p { margin: 5px 0 0; color: #c8b59a; font-size: 12px; }
+.answer-card { border: 1px solid #80cc91a6; border-radius: 12px; padding: 13px 16px; background: #102415b8; margin-top: 10px; text-align: left; }
+.answer-card span { display: block; color: #a9e8b5; font-size: 11px; letter-spacing: .08em; }
+.answer-card p { margin: 5px 0 0; color: #e5ffe8; font-size: 13px; line-height: 1.65; }
+.message { min-height: 48px; margin: 17px 0 10px; padding: 12px 13px; border-left: 3px solid #e6ae60; background: #100b087d; color: #ffe7ba; font-size: 13px; line-height: 1.55; transition: color .2s, border-color .2s; }
+.message.correct { border-color: #81dd96; color: #c8ffd2; }
+.message.wrong, .message.timeout { border-color: #fa8888; color: #ffd0d0; }
+button { border: 0; border-radius: 999px; padding: 12px 19px; background: #e6a959; color: #261508; font: 700 13px "Zen Maru Gothic", sans-serif; cursor: pointer; box-shadow: 0 4px 0 #8d5725; transition: transform .15s, filter .15s; }
+button:hover { transform: translateY(-2px); filter: brightness(1.08); } button:active { transform: translateY(2px); box-shadow: 0 2px 0 #8d5725; }
+.hint { color: #a99980; font-size: 11px; margin-top: 18px; }
+.scene-wrap { width: min(100%, 790px); justify-self: center; background: #0d0906; border: 8px solid #4e2d19; border-radius: 14px; box-shadow: 0 22px 65px #0009, inset 0 0 0 2px #c28a4b; overflow: hidden; }
+#game { width: 100%; aspect-ratio: 1; } #game canvas { display: block; width: 100% !important; height: auto !important; }
+@media (max-width: 840px) { .game-shell { grid-template-columns: 1fr; padding: 26px 20px 38px; gap: 25px; } .game-copy { text-align: center; } .lead { margin: 12px auto 18px; max-width: 450px; } .status-card, .target-card { display: inline-block; vertical-align: top; min-width: 45%; text-align: left; } .message { text-align: left; } .hint { display: none; } .scene-wrap { width: min(100%, 680px); } }

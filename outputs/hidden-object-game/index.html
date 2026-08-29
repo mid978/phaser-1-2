@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>喫茶ふわんこ 探し物ゲーム</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.min.js"></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="game-copy">
+        <p class="eyebrow">HIDDEN OBJECT PROTOTYPE</p>
+        <h1>喫茶ふわんこ<br /><span>探し物ゲーム</span></h1>
+        <p class="lead">お店の中から、お題の品を見つけてクリックしよう。</p>
+
+        <div class="status-card">
+          <span>のこり時間</span>
+          <strong id="timer">01:00</strong>
+        </div>
+        <div class="target-card">
+          <span>さがすもの</span>
+          <strong id="target-name">読み込み中…</strong>
+          <p id="progress">0 / 4 個みつけた</p>
+        </div>
+
+        <div id="answer-card" class="answer-card" hidden>
+          <span>正解一覧</span>
+          <p id="answer-list"></p>
+        </div>
+
+        <div id="message" class="message" aria-live="polite">画像をよく見て探してみよう！</div>
+        <button id="restart" type="button">もう一度あそぶ</button>
+        <p class="hint">正解は緑、不正解は赤く表示されます。</p>
+      </section>
+
+      <section class="scene-wrap" aria-label="探し物ゲーム画面">
+        <div id="game" role="application" aria-label="喫茶店の中からアイテムを探すゲーム"></div>
+      </section>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
