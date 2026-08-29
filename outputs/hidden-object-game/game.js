@@ -3,10 +3,14 @@ const SIZE = 1254;
 const LIMIT_SECONDS = 60;
 
 const items = [
-  { name: "白いねこ", x: 1118, y: 1080, radius: 47 },
-  { name: "大きな古時計", x: 1152, y: 255, radius: 48 },
-  { name: "緑のテーブルランプ", x: 882, y: 402, radius: 43 },
-  { name: "金色の蓄音機", x: 1089, y: 518, radius: 52 }
+  { name: "壁の大きな時計", x: 414, y: 105, radius: 52 },
+  { name: "レジスター", x: 741, y: 245, radius: 45 },
+  { name: "赤いひさし", x: 109, y: 470, radius: 80 },
+  { name: "招き猫", x: 1053, y: 720, radius: 40 },
+  { name: "オムライスのポスター", x: 87, y: 217, radius: 52 },
+  { name: "傘立て", x: 518, y: 922, radius: 55 },
+  { name: "りんごのかご", x: 310, y: 1050, radius: 55 },
+  { name: "黄色いごみ箱", x: 624, y: 1174, radius: 38 }
 ];
 
 const ui = {
@@ -53,10 +57,10 @@ function formatTime(seconds) { return `00:${String(Math.max(0, seconds)).padStar
 
 class FindScene extends Phaser.Scene {
   constructor() { super('find-scene'); }
-  preload() { this.load.image('cafe', 'assets/cafe-scene.png'); }
+  preload() { this.load.image('bistro', 'assets/bistro-scene.png'); }
   create() {
     scene = this;
-    this.add.image(SIZE / 2, SIZE / 2, 'cafe').setDisplaySize(SIZE, SIZE);
+    this.add.image(SIZE / 2, SIZE / 2, 'bistro').setDisplaySize(SIZE, SIZE);
     this.overlay = this.add.graphics();
     this.items = items.map(item => ({ ...item, found: false }));
     this.current = 0;
@@ -108,7 +112,7 @@ class FindScene extends Phaser.Scene {
     ui.answerCard.hidden = false;
     if (won) {
       sound.clear();
-      setMessage('🎉 全部見つけた！ 喫茶ふわんこを満喫しました。', 'correct');
+      setMessage('🎉 全部見つけた！ 洋食まつもとを満喫しました。', 'correct');
       this.cameras.main.flash(350, 126, 234, 159);
     } else {
       sound.timeout();
