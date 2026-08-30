@@ -26,4 +26,9 @@ button:hover { transform: translateY(-2px); filter: brightness(1.08); } button:a
 .hint { color: #a99980; font-size: 11px; margin-top: 18px; }
 .scene-wrap { width: min(100%, 790px); justify-self: center; background: #0d0906; border: 8px solid #4e2d19; border-radius: 14px; box-shadow: 0 22px 65px #0009, inset 0 0 0 2px #c28a4b; overflow: hidden; }
 #game { width: 100%; aspect-ratio: 1; } #game canvas { display: block; width: 100% !important; height: auto !important; }
+.language-select { position: fixed; z-index: 10; inset: 0; display: grid; place-items: center; padding: 22px; background: #130b08b8; backdrop-filter: blur(7px); }
+.language-select[hidden] { display: none; }
+.language-card { width: min(100%, 510px); padding: clamp(28px, 6vw, 52px); border: 1px solid #d6a45e; border-radius: 20px; text-align: center; background: linear-gradient(145deg, #3d2214, #1b100b); box-shadow: 0 30px 80px #000b; }
+.language-card h2 { margin: 0 0 26px; font: 700 clamp(24px, 4vw, 36px)/1.45 "Kaisei Decol", serif; color: #fff6e6; }.language-card h2 span { color: #e9b365; }
+.language-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }.language-buttons button { border-radius: 12px; padding: 17px 12px; font-size: 18px; }.language-buttons small { font-weight: 500; font-size: 11px; }
 @media (max-width: 840px) { .game-shell { grid-template-columns: 1fr; padding: 26px 20px 38px; gap: 25px; } .game-copy { text-align: center; } .lead { margin: 12px auto 18px; max-width: 450px; } .status-card, .target-card { display: inline-block; vertical-align: top; min-width: 45%; text-align: left; } .message { text-align: left; } .hint { display: none; } .scene-wrap { width: min(100%, 680px); } }

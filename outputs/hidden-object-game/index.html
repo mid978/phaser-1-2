@@ -10,34 +10,44 @@
   <body>
     <main class="game-shell">
       <section class="game-copy">
-        <p class="eyebrow">HIDDEN OBJECT PROTOTYPE</p>
-        <h1>洋食まつもと<br /><span>探し物ゲーム</span></h1>
-        <p class="lead">にぎやかな洋食店の中から、お題の品を見つけてクリックしよう。</p>
+        <p id="eyebrow" class="eyebrow">HIDDEN OBJECT GAME</p>
+        <h1 id="game-title">洋食まつもと<br /><span>探し物ゲーム</span></h1>
+        <p id="lead" class="lead">にぎやかな洋食店の中から、お題の品を見つけてクリックしよう。</p>
 
         <div class="status-card">
-          <span>のこり時間</span>
+          <span id="timer-label">のこり時間</span>
           <strong id="timer">01:00</strong>
         </div>
         <div class="target-card">
-          <span>さがすもの</span>
+          <span id="target-label">さがすもの</span>
           <strong id="target-name">読み込み中…</strong>
-          <p id="progress">0 / 4 個みつけた</p>
+          <p id="progress">0 / 8 個みつけた</p>
         </div>
 
         <div id="answer-card" class="answer-card" hidden>
-          <span>正解一覧</span>
+          <span id="answer-heading">正解一覧</span>
           <p id="answer-list"></p>
         </div>
 
         <div id="message" class="message" aria-live="polite">画像をよく見て探してみよう！</div>
         <button id="restart" type="button">もう一度あそぶ</button>
-        <p class="hint">正解は緑、不正解は赤く表示されます。</p>
+        <p id="hint" class="hint">正解は緑、不正解は赤く表示されます。</p>
       </section>
 
       <section class="scene-wrap" aria-label="探し物ゲーム画面">
         <div id="game" role="application" aria-label="喫茶店の中からアイテムを探すゲーム"></div>
       </section>
     </main>
+    <div id="language-select" class="language-select" role="dialog" aria-modal="true" aria-labelledby="language-title">
+      <div class="language-card">
+        <p class="eyebrow">WELCOME</p>
+        <h2 id="language-title">ことばをえらんでね<br /><span>Choose your language</span></h2>
+        <div class="language-buttons">
+          <button type="button" data-language="ja">日本語<br /><small>はじめる</small></button>
+          <button type="button" data-language="en">English<br /><small>Start</small></button>
+        </div>
+      </div>
+    </div>
     <script src="game.js"></script>
   </body>
 </html>
